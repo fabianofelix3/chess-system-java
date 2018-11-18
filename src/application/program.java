@@ -1,13 +1,13 @@
 package application;
 
-import bordergame.Board;
+import chess.ChessMacth;
 
 public class program {
 
 	public static void main(String[] args) {
 
-		Board board = new Board(8, 8);
+		ChessMacth chessMacth = new ChessMacth();
+		UI.PrintBoard(chessMacth.getPieces());
 
 	}
-
 }
