@@ -3,11 +3,10 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import org.omg.PortableServer.ImplicitActivationPolicyValue;
-
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
+import chess.ChessMacth;
 
 public class UI {
 
@@ -47,6 +46,13 @@ public class UI {
 		} catch (RuntimeException e) {
 			throw new InputMismatchException("Erro reading ChessPosition.Valid value are from a1 to a8.");
 		}
+	}
+
+	public static void printMatch(ChessMacth chessmatch) {
+		PrintBoard(chessmatch.getPieces());
+		System.out.println();
+		System.out.println("Turn : " + chessmatch.getTurn());
+		System.out.println("Waiting player: " + chessmatch.getCurrentPlayer());
 	}
 
 	public static void PrintBoard(ChessPiece[][] pieces) {
