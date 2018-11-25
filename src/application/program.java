@@ -13,6 +13,7 @@ import chess.ChessPosition;
 public class Program {
 
 	public static void main(String[] args) {
+
 		Scanner sc = new Scanner(System.in);
 		ChessMacth chessMacth = new ChessMacth();
 		List<ChessPiece> captured = new ArrayList<>();
@@ -26,7 +27,7 @@ public class Program {
 				ChessPosition source = UI.readChessPosition(sc);
 				boolean[][] possibleMoves = chessMacth.possibleMoves(source);
 				UI.clearScreen();
-				UI.PrintBoard(chessMacth.getPieces(), possibleMoves);
+				UI.printBoard(chessMacth.getPieces(), possibleMoves);
 
 				System.out.println();
 				System.out.print("Target: ");
@@ -34,7 +35,7 @@ public class Program {
 
 				ChessPiece capturedPiece = chessMacth.performChessMove(source, target);
 
-				if (captured != null) {
+				if (capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
 
